@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vith Gaming</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f1f5f9;
+  color:#111827;
+}
+
+header{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:30px 15px;
+}
+
+header h1{
+  margin:0;
+  font-size:32px;
+}
+
+header p{
+  color:#cbd5e1;
+}
+
+nav{
+  background:#1f2937;
+  padding:15px;
+  text-align:center;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 8px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.search{
+  width:100%;
+  padding:15px;
+  border:1px solid #d1d5db;
+  border-radius:12px;
+  font-size:16px;
+  margin-bottom:20px;
+}
+
+.hero{
+  background:#2563eb;
+  color:white;
+  padding:30px 22px;
+  border-radius:16px;
+}
+
+.card{
+  background:white;
+  padding:22px;
+  margin:20px 0;
+  border-radius:16px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.card p{
+  line-height:1.8;
+  color:#4b5563;
+}
+
+.button{
+  display:inline-block;
+  background:#2563eb;
+  color:white;
+  text-decoration:none;
+  padding:11px 16px;
+  border-radius:9px;
+}
+
+footer{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:22px;
+  margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎮 Vith Gaming</h1>
+  <p>Gaming Tips • News • Technology</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="freefire.html">Free Fire</a>
+  <a href="#">Football</a>
+  <a href="#">PC</a>
+  <a href="#">Mobile</a>
+</nav>
+
+<div class="container">
+
+  <input
+    class="search"
+    id="search"
+    type="text"
+    placeholder="🔎 ស្វែងរកអត្ថបទ..."
+    oninput="searchArticle()"
+  >
+
+  <div class="hero">
+    <h2>ស្វាគមន៍មកកាន់ Vith Gaming 🔥</h2>
+    <p>
+      Gaming Tips, ព័ត៌មានហ្គេម
+      និងចំណេះដឹងអំពី PC និង Mobile។
+    </p>
+  </div>
+
+  <h2>📰 អត្ថបទថ្មីៗ</h2>
+
+  <div id="articles">
+
+    <div class="card">
+      <h2>🎯 5 Tips សម្រាប់លេង Free Fire</h2>
+
+      <p>
+        រៀនពី Aim, Controls, ទីតាំង
+        និងការលេងជាក្រុម។
+      </p>
+
+      <a class="button" href="freefire.html">
+        អានបន្ថែម →
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>💻 PC Gaming</h2>
+
+      <p>
+        ព័ត៌មាន និងចំណេះដឹងអំពី PC
+        សម្រាប់អ្នកចូលចិត្ត Gaming។
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>📱 Mobile Gaming</h2>
+
+      <p>
+        Tips និងព័ត៌មានអំពីការលេងហ្គេម
+        លើទូរស័ព្ទ។
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Vith Gaming
+</footer>
+
+<script>
+function searchArticle(){
+
+  let keyword =
+    document.getElementById("search").value.toLowerCase();
+
+  let cards =
+    document.querySelectorAll("#articles .card");
+
+  cards.forEach(function(card){
+
+    let text =
+      card.innerText.toLowerCase();
+
+    if(text.includes(keyword)){
+      card.style.display = "block";
+    }else{
+      card.style.display = "none";
+    }
+
+  });
+}
+</script>
+
+</body>
+</html>
